@@ -1,9 +1,17 @@
 <?php
+    //Development code
+    // $host= '127.0.0.1:3307';
+    // $dbase= 'attendance_dbase';
+    // $user= 'root';
+    // $pass= '';
+    // $charset= 'utf8mb4';
 
-    $host= '127.0.0.1:3307';
-    $dbase= 'attendance_dbase';
-    $user= 'root';
-    $pass= '';
+
+        //Remote connection code
+    $host= 'remotemysql.com';
+    $dbase= 'OSQkK1i90V';
+    $user= 'OSQkK1i90V';
+    $pass= 'lid5yFexh2';
     $charset= 'utf8mb4';
 
     $dsn= "mysql:host=$host;dbname=$dbase;charset=$charset";

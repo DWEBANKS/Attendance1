@@ -2,6 +2,7 @@
 <?php 
     $title = 'Edit Records';
 require_once  'include_require/header.php' ;
+require_once  'include_require/auth_check.php' ;
  require_once  'dbase/conn.php' ;
 
  $result=$crud->getClasses();

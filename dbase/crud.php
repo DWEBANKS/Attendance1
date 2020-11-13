@@ -120,6 +120,23 @@
             return false;
             }   
         }
+
+        public function getClassById($id){
+
+            try {
+
+            $sql = "SELECT * FROM `classes` where class_id =:id";
+            $stmt = $this ->dbase ->prepare($sql);
+            $stmt ->bindparam(':id', $id);
+            $stmt ->execute();
+            $result = $stmt->fetch();
+            return $result; 
+        }catch (PDOexception $e) {
+            //throw $th;
+            echo $e ->getMessage();
+            return false;
+            }   
+        }
     }
 
 

@@ -16,7 +16,8 @@ require_once  'include_require/auth_check.php' ;
 
 
 ?>
-    <img scr="<?php echo $result ['avatar_path' ]?>" class="rounded-circle" style="with: 20%; height: 20%" />
+    <img scr="<?php echo empty($result['avatar_path' ]) ? "uploads/profile.png" : $result['avatar_path'];?>" 
+    class="rounded-circle" style="with: 20%; height: 20%" />
 
 
 <div class="card" style="width: 18rem;">

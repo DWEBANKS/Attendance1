@@ -7,12 +7,12 @@
             $this ->dbase = $conn;
         }
 
-        public function insertAttendees ($fname, $lname, $dob, $email, $contact, $class){
+        public function insertAttendees ($fname, $lname, $dob, $email, $contact, $class, $avatar_path){
 
         try {
             //code...
-            $sql = "INSERT INTO attendees (first_name, last_name, date_of_birth, email, contact, class_id)
-             VALUES (:fname, :lname, :dob, :email, :contact, :class)";
+            $sql = "INSERT INTO attendees (first_name, last_name, date_of_birth, email, contact, class_id, avatar_path)
+             VALUES (:fname, :lname, :dob, :email, :contact, :class, :avatar_path)";
 
             $stmt = $this ->dbase->prepare($sql);
 
@@ -22,6 +22,7 @@
             $stmt ->bindparam(':email', $email);
             $stmt ->bindparam(':contact', $contact);
             $stmt ->bindparam(':class', $class);
+            $stmt ->bindparam(':avatar_path', $avatar_path);
 
             $stmt ->execute();
             return true;

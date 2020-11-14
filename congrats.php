@@ -13,7 +13,16 @@ if(isset($_POST['submit'])){
     $contact = $_POST['phone'];
     $class = $_POST['class'];
 
-    $isSuccess = $crud ->insertAttendees($fname, $lname, $dob, $email, $contact, $class);
+    $orig_file = $_FILES["avatar"]["temp_name"];
+    $ext = pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION);
+    $target_dir = 'uploads/*';
+    $destination = "$target_dir$contact.$ext";
+    move_uploaded_file($orig_file,$destination);
+
+    
+
+
+    $isSuccess = $crud ->insertAttendees($fname, $lname, $dob, $email, $contact, $class, $destination);
     $className = $crud->getClassById($class);
 
     if($isSuccess){
@@ -30,13 +39,13 @@ if(isset($_POST['submit'])){
 ?>
 
 
-    
+    <img scr="<?php echo $destination; ?>" class="rounded-circle" style="with: 20%; height: 20%" />
 
 <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title"><?php echo $_POST ['firstname'] .' '. $_POST['lastname'];?></h5>
 
-    <h6 class="card-subtitle mb-2 text-muted"><?php echo $className['name'];?></h6>
+    <h6 class="card-subtitle mb-2 text-muted"><?php echo $className["name"];?></h6>
 
     <p class="card-text">Date of Birth: <?php echo $_POST ['date_of_birth']; ?></p>
 

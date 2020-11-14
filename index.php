@@ -54,6 +54,14 @@ require_once  'include_require/header.php' ;
     <input required type="text" class="form-control" id="phone" name="phone" aria-describedby="phoneHelp" >
     <small id="phoneHelp"  class="form-text text-muted">We'll never share your contact with anyone else.</small>
   </div>
+
+  <div class="custom-file">
+    <input type="file" accept ='image/*' class="custom-file-input" id="avatar" name="avatar" >
+    <label class="custom-file-label" for = 'avatar'>Choose file</label>
+    <small id="avatar"  class="form-text text-danger">File upload is optional.</small>
+    
+        <br>
+  </div>
     <button type="submit" name="submit" class="btn btn-primary">Submit</button>
 </form>
 <br>

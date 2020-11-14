@@ -1,11 +1,8 @@
 
-    <div id = 'footer'>
-
-        <?php echo 'copyright ' . date ('y'); ?>
-
+    
+        <div id="footer" class="p-3 bg-primary text-black fixed-bottom">
+          <p class="text-center">Copyright &copy; - IT Summer Camp Attendance System <?php echo date('y'); ?></p>
         </div>
-        </div>
-
 
 
 

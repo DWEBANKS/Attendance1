@@ -10,7 +10,7 @@ require_once  'include_require/header.php' ;
 
     <h1 class = 'text-center'>Registration Form for IT Summer Camp</h1>
 
-    <form method="post" action="congrats.php">
+    <form method="post" action="congrats.php" ecytype ='mulitpart/form-data'>
   <div class="form-group">
     <label for="firstname">First Name</label>
     <input required type="text" class="form-control" id="firstname" name = "firstname" >

@@ -15,15 +15,15 @@
 
                 }else{
 
-                $new_password = md5($password.$username);
+                $new_password=md5($password.$username);
                 //code...
                 $sql = "INSERT INTO user (username, password)
                  VALUES (:username, :password)";
     
                 $stmt = $this ->dbase->prepare($sql);
     
-                $stmt ->bindparam(':username', $username);
-                $stmt ->bindparam(':password', $new_password);
+                $stmt ->bindparam(':username',$username);
+                $stmt ->bindparam(':password',$new_password);
                 
     
                 $stmt ->execute();
@@ -39,7 +39,7 @@
 
         }
 
-        public function getUser ($username, $password){
+        public function getUser ($username,$password){
             try {
                 $sql = "select * from user where username = :username AND password = :password";
             $stmt = $this ->dbase ->prepare($sql);
